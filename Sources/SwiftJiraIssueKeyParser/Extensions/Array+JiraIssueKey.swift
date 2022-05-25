@@ -19,6 +19,8 @@ extension Array where Element == JiraIssueKey {
     }
     
     // MARK: - Computed Properties
+    
+    /// Unique list of projects as a string array
     public var projects: [String] {
         return self.map { issueKey in
             issueKey.projectKey
