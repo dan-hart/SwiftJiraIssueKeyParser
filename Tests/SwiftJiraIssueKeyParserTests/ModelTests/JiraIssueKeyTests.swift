@@ -160,6 +160,6 @@ class JiraIssueKeyTests: XCTestCase {
     
     // MARK: - Equatable
     func testEquality() {
-        
+        XCTAssertEqual(JiraIssueKey(id: "SMART-2"), JiraIssueKey(id: "SMART-2"))
     }
 }
