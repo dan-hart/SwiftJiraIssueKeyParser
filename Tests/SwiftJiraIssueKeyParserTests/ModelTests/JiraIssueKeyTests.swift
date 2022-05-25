@@ -122,5 +122,8 @@ class JiraIssueKeyTests: XCTestCase {
     func testURLMultiple() {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = "http://jira/"
         XCTAssertEqual((try? JiraIssueKey.example.url())?.absoluteString, "http://jira/browse/SMART-1")
+        
+        SwiftJiraIssueKeyParser.shared.instanceBaseURL = ""
+        XCTAssertEqual((try? JiraIssueKey.example.url())?.absoluteString, "http://jira/browse/SMART-1")
     }
 }
