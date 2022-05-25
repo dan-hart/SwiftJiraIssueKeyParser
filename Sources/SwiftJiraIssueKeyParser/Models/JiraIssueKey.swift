@@ -60,7 +60,7 @@ public struct JiraIssueKey: Equatable, Hashable {
 // MARK: - Computed Properties
 extension JiraIssueKey {
     /// Using the `SwiftJiraIssueKeyParser` base url, return this issue's url
-    public var url: URL? throws {
+    public var url: URL? {
         if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL {
             return url(using: baseURL)
         } else {
