@@ -137,4 +137,7 @@ class JiraIssueKeyTests: XCTestCase {
     }
     
     // MARK: - Regex Tests
+    func testRegexPattern() {
+        
+    }
 }
