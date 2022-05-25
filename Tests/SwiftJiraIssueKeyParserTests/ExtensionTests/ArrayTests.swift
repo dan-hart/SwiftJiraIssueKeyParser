@@ -15,7 +15,7 @@ class ArrayTests: XCTestCase {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = nil
     }
     
-    func testJiraIssueKeys() {
+    func testInit() {
         XCTAssertEqual("TEST-1, TEST-2, and TEST-3".jiraIssueKeys, [
             JiraIssueKey(id: "TEST-1")!,
             JiraIssueKey(id: "TEST-2")!,
