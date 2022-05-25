@@ -22,6 +22,6 @@ extension Array where Element == JiraIssueKey {
     public var projects: [String] {
         return self.map { issueKey in
             issueKey.projectKey
-        }
+        }.unique()
     }
 }
