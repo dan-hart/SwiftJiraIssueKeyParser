@@ -151,5 +151,8 @@ class JiraIssueKeyTests: XCTestCase {
     func testNSRegularExpression() {
         let regex = JiraIssueKey.example.nsRegularExpression
         XCTAssertNotNil(regex)
+        
+        let regex = JiraIssueKey(id: "").nsRegularExpression
+        XCTAssertNotNil(regex)
     }
 }
