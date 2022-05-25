@@ -138,6 +138,7 @@ class JiraIssueKeyTests: XCTestCase {
     
     // MARK: - Regex Tests
     func testRegexPattern() {
-        
+        XCTAssertNotNil(JiraIssueKey.regularExpressionPatternString)
+        XCTAssertNotEqual(JiraIssueKey.regularExpressionPatternString, "")
     }
 }
