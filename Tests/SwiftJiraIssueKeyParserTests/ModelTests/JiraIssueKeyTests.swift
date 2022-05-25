@@ -153,6 +153,6 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertNotNil(regex)
         
         let regex = JiraIssueKey(id: "").nsRegularExpression
-        XCTAssertNotNil(regex)
+        XCTAssertNil(regex)
     }
 }
