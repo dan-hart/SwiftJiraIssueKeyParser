@@ -162,5 +162,6 @@ class JiraIssueKeyTests: XCTestCase {
     func testEquality() {
         XCTAssertEqual(JiraIssueKey(id: "SMART-2"), JiraIssueKey(id: "SMART-2"))
         XCTAssertNotEqual(JiraIssueKey(id: "SMART-1"), JiraIssueKey(id: "SMART-2"))
+        XCTAssertNotEqual(JiraIssueKey(id: ""), JiraIssueKey(id: "SMART-2"))
     }
 }
