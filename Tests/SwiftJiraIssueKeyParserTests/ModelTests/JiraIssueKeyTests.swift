@@ -141,5 +141,7 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertNotNil(JiraIssueKey.regularExpressionPatternString)
         XCTAssertNotEqual(JiraIssueKey.regularExpressionPatternString, "")
         XCTAssertNotEqual(JiraIssueKey.regularExpressionPatternString, " ")
+        
+        XCTAssertEqual(JiraIssueKey.regularExpressionPatternString, "((?<!([A-Z]{1,10})-?)[A-Z]+-\\d+)")
     }
 }
