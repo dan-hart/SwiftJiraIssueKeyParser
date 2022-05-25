@@ -147,4 +147,8 @@ class JiraIssueKeyTests: XCTestCase {
         // https://confluence.atlassian.com/stashkb/integrating-with-custom-jira-issue-key-313460921.html
         XCTAssertEqual(JiraIssueKey.regularExpressionPatternString, "((?<!([A-Z]{1,10})-?)[A-Z]+-\\d+)")
     }
+    
+    func testNSRegularExpression() {
+        
+    }
 }
