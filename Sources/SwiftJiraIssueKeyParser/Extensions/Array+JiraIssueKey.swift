@@ -20,7 +20,7 @@ extension Array where Element == JiraIssueKey {
     
     // MARK: - Computed Properties
     public var projects: [String] {
-        return self.map {
+        return self.map { issueKey in
             
         }
     }
