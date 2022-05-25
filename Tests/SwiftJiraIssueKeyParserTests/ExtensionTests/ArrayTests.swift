@@ -16,7 +16,7 @@ class ArrayTests: XCTestCase {
     }
     
     func testInit() {
-        XCTAssertEqual("TEST-1, TEST-2, and TEST-3".jiraIssueKeys, [
+        XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and TEST-3"), [
             JiraIssueKey(id: "TEST-1")!,
             JiraIssueKey(id: "TEST-2")!,
             JiraIssueKey(id: "TEST-3")!,
