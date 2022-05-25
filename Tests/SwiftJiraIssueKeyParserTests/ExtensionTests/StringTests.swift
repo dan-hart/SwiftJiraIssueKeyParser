@@ -16,6 +16,10 @@ class StringTests: XCTestCase {
     }
     
     func testJiraIssueKeys() {
-        
+        XCTAssertEqual("TEST-1, TEST-2, TEST-3".jiraIssueKeys, [
+            JiraIssueKey(id: "TEST-1")!,
+            JiraIssueKey(id: "TEST-2")!,
+            JiraIssueKey(id: "TEST-3")!,
+        ])
     }
 }
