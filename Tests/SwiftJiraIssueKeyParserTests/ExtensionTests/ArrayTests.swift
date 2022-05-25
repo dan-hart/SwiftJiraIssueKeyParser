@@ -25,5 +25,6 @@ class ArrayTests: XCTestCase {
     
     func testProjects() {
         XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and TEST-3")?.projects, ["TEST"])
+        XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and SMART-3")?.projects, ["TEST", "SMART"])
     }
 }
