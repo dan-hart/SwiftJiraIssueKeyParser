@@ -17,4 +17,9 @@ extension Array where Element == JiraIssueKey {
         }
         self = results
     }
+    
+    // MARK: - Computed Properties
+    public var projects: [String] {
+        
+    }
 }
