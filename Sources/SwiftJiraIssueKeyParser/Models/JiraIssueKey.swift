@@ -64,7 +64,7 @@ extension JiraIssueKey {
         if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL {
             return url(using: baseURL)
         } else {
-            preconditionFailure("Set the \(SwiftJiraIssueKeyParser.self) base url.")
+            throw JiraIssueKeyError.missingBaseURL
         }
     }
 }
