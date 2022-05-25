@@ -22,4 +22,8 @@ class ArrayTests: XCTestCase {
             JiraIssueKey(id: "TEST-3")!,
         ])
     }
+    
+    func testProjects() {
+        
+    }
 }
