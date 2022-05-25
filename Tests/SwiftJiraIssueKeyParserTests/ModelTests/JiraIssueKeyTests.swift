@@ -144,7 +144,7 @@ class JiraIssueKeyTests: XCTestCase {
         
         // Make SURE this is the OFFICIAL Jira regex, we want to match what atlassian has
         // specified as much as possible.
-        
+        // https://confluence.atlassian.com/stashkb/integrating-with-custom-jira-issue-key-313460921.html
         XCTAssertEqual(JiraIssueKey.regularExpressionPatternString, "((?<!([A-Z]{1,10})-?)[A-Z]+-\\d+)")
     }
 }
