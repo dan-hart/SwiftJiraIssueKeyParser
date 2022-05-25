@@ -8,10 +8,10 @@
 import Foundation
 
 /// Extend the functionality of an array where the element is a jira issue key
-extension Array where Element == JiraIssueKey {
+public extension Array where Element == JiraIssueKey {
     /// Create an array of `JiraIssueKey` with a given string
     /// - Parameter string: string containing none or some key ids
-    public init?(string: String) {
+    init?(string: String) {
         guard let results = JiraIssueKey.with(text: string) else {
             return nil
         }
@@ -21,7 +21,7 @@ extension Array where Element == JiraIssueKey {
     // MARK: - Computed Properties
     
     /// Unique list of projects as a string array
-    public var projects: [String] {
+    var projects: [String] {
         return self.map { issueKey in
             issueKey.projectKey
         }.unique()
