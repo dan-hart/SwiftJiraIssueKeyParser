@@ -149,6 +149,6 @@ class JiraIssueKeyTests: XCTestCase {
     }
     
     func testNSRegularExpression() {
-        
+        let regex = JiraIssueKey.example.nsRegularExpression
     }
 }
