@@ -14,3 +14,4 @@ class StringTests: XCTestCase {
     override func setUp() async throws {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = nil
     }
+}
