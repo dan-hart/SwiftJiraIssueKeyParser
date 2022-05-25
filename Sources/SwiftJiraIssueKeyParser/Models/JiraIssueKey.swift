@@ -70,7 +70,7 @@ extension JiraIssueKey {
     /// Create a URL using the given jira instance url
     /// - Parameter instanceBaseURL: i.e. "https://instance.jira.com/"
     /// - Returns: a URL with the proper components added to view this issue
-    public func getURL() throws -> URL? {
+    public func url() throws -> URL? {
         if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL {
             return url(using: baseURL)
         } else {
