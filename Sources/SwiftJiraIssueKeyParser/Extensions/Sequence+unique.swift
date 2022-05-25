@@ -1,5 +1,5 @@
 //
-//  sequence.swift
+//  Sequence+unique.swift
 //  
 //
 //  Created by Dan Hart on 5/25/22.
