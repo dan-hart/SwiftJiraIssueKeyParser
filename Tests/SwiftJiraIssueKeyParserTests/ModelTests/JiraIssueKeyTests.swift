@@ -142,6 +142,9 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertNotEqual(JiraIssueKey.regularExpressionPatternString, "")
         XCTAssertNotEqual(JiraIssueKey.regularExpressionPatternString, " ")
         
+        // Make SURE this is the OFFICIAL Jira regex, we want to match what atlassian has
+        // specified as much as possible.
+        
         XCTAssertEqual(JiraIssueKey.regularExpressionPatternString, "((?<!([A-Z]{1,10})-?)[A-Z]+-\\d+)")
     }
 }
