@@ -100,6 +100,6 @@ class JiraIssueKeyTests: XCTestCase {
     
     // MARK: - Test URL
     func testURLFailure() {
-        XCTAssertThrowsError(JiraIssueKey.example.url)
+        XCTAssertThrowsError(JiraIssueKey.example.url())
     }
 }
