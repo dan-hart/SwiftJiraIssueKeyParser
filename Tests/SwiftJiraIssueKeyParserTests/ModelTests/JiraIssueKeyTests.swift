@@ -9,6 +9,9 @@ import XCTest
 @testable import SwiftJiraIssueKeyParser
 
 class JiraIssueKeyTests: XCTestCase {
+    override func setUp() async throws {
+        SwiftJiraIssueKeyParser.shared.instanceBaseURL = nil
+    }
     func testDelimiter() {
         // Consider changing this carefully
         XCTAssertEqual(JiraIssueKey.delimiter, "-")
