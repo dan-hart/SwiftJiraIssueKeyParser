@@ -102,4 +102,8 @@ class JiraIssueKeyTests: XCTestCase {
     func testURLFailure() {
         XCTAssertThrowsError(try JiraIssueKey.example.url())
     }
+    
+    func testURLSuccess() {
+        SwiftJiraIssueKeyParser.shared.instanceBaseURL = 
+    }
 }
