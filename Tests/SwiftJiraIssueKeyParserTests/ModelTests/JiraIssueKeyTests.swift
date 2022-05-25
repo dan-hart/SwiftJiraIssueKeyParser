@@ -12,6 +12,7 @@ class JiraIssueKeyTests: XCTestCase {
     override func setUp() async throws {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = nil
     }
+    
     func testDelimiter() {
         // Consider changing this carefully
         XCTAssertEqual(JiraIssueKey.delimiter, "-")
@@ -106,10 +107,15 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertThrowsError(try JiraIssueKey.example.url())
     }
     
-    func testURLSuccess() {
+    func testURLSuccess1() {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = "https://jira.atlassian.com"
         let url = try? JiraIssueKey.example.url()
         XCTAssertNotNil(url)
         XCTAssertEqual(url?.absoluteString, "https://jira.atlassian.com/browse/SMART-1")
+    }
+    
+    func testURLSuccess2() {
+        SwiftJiraIssueKeyParser.shared.instanceBaseURL = "https://jira.atlassian.com/"
+        XCTAssertEqual((try? JiraIssueKey.example.url())?.absoluteString, "https://jira.atlassian.com/browse/SMART-1")
     }
 }
