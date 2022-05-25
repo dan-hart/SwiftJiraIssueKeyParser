@@ -61,11 +61,7 @@ public struct JiraIssueKey: Equatable, Hashable {
 extension JiraIssueKey {
     /// Using the `SwiftJiraIssueKeyParser` base url, return this issue's url
     public var url: URL? {
-        if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL {
-            return url(using: baseURL)
-        } else {
-            throw JiraIssueKeyError.missingBaseURL
-        }
+        return getURL()
     }
 }
 
