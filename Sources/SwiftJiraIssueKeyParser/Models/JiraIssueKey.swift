@@ -57,19 +57,9 @@ public struct JiraIssueKey: Equatable, Hashable {
     }
 }
 
-// MARK: - Computed Properties
-extension JiraIssueKey {
-    /// Using the `SwiftJiraIssueKeyParser` base url, return this issue's url
-    public var url: URL? {
-        return getURL()
-    }
-}
-
 // MARK: - Functions
 extension JiraIssueKey {
-    /// Create a URL using the given jira instance url
-    /// - Parameter instanceBaseURL: i.e. "https://instance.jira.com/"
-    /// - Returns: a URL with the proper components added to view this issue
+    /// Using the `SwiftJiraIssueKeyParser` base url, return this issue's url
     public func url() throws -> URL? {
         if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL {
             return url(using: baseURL)
