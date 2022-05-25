@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     /// parse issue key ids from this string if there are any
-    var jiraIssueKeys: [JiraIssueKey]? {
+    public var jiraIssueKeys: [JiraIssueKey]? {
         return Array<JiraIssueKey>(string: self)
     }
 }
