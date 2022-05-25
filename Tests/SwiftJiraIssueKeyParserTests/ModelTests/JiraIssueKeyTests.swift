@@ -107,5 +107,6 @@ class JiraIssueKeyTests: XCTestCase {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = "https://jira.atlassian.com"
         let url = try? JiraIssueKey.example.url()
         XCTAssertNotNil(url)
+        XCTAssertEqual(url?.absoluteURL, "")
     }
 }
