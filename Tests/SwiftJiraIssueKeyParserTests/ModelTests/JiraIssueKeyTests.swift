@@ -157,4 +157,6 @@ class JiraIssueKeyTests: XCTestCase {
         let regexFromInit = JiraIssueKey(id: "")?.nsRegularExpression
         XCTAssertNil(regexFromInit)
     }
+    
+    // MARK: - Equatable
 }
