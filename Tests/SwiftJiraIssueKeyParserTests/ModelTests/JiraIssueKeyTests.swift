@@ -135,4 +135,6 @@ class JiraIssueKeyTests: XCTestCase {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = "jira"
         XCTAssertEqual((try? JiraIssueKey.example.url())?.absoluteString, "jira/browse/SMART-1")
     }
+    
+    // MARK: - Regex Tests
 }
