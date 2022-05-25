@@ -74,6 +74,16 @@ extension JiraIssueKey {
     /// Create a URL using the given jira instance url
     /// - Parameter instanceBaseURL: i.e. "https://instance.jira.com/"
     /// - Returns: a URL with the proper components added to view this issue
+    public func url() throws -> URL? {
+        guard let baseURL = URL(string: instanceBaseURL) else { return nil }
+        var browseURL = baseURL.appendingPathComponent("browse", isDirectory: true)
+        browseURL.appendPathComponent(id)
+        return browseURL
+    }
+    
+    /// Create a URL using the given jira instance url
+    /// - Parameter instanceBaseURL: i.e. "https://instance.jira.com/"
+    /// - Returns: a URL with the proper components added to view this issue
     public func url(using instanceBaseURL: String) -> URL? {
         guard let baseURL = URL(string: instanceBaseURL) else { return nil }
         var browseURL = baseURL.appendingPathComponent("browse", isDirectory: true)
