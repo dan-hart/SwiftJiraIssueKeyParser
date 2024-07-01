@@ -131,6 +131,16 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertEqual((try? JiraIssueKey.example.url())?.absoluteString, "https://jira.atlassian.com/browse/SMART-1")
     }
     
+    func testURLSuccess3() {
+        let url = JiraIssueKey.example.url(using: "https://acme.atlassian.net")
+        XCTAssertEqual(url?.absoluteString, "https://acme.atlassian.net/browse/SMART-1")
+    }
+    
+    func testURLSuccess4() {
+        let url = JiraIssueKey.example.url(using: "localLink")
+        XCTAssertEqual(url?.absoluteString, "localLink/browse/SMART-1")
+    }
+    
     func testURLMultiple() {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = "http://jira/"
         XCTAssertEqual((try? JiraIssueKey.example.url())?.absoluteString, "http://jira/browse/SMART-1")

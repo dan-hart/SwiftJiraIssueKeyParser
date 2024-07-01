@@ -15,7 +15,15 @@ class StringTests: XCTestCase {
         SwiftJiraIssueKeyParser.shared.instanceBaseURL = nil
     }
     
-    func testJiraIssueKeyFromString() {
+    func testFirstJiraIssueKeyFromString() {
+        let issueKey = "The issue is SMART-1, not SMART-2".firstJiraIssueKey
+        XCTAssertNotNil(issueKey)
+        XCTAssertEqual(issueKey?.id, "SMART-1")
+        XCTAssertEqual(issueKey?.projectKey, "SMART")
+        XCTAssertEqual(issueKey?.sequentialNumber, 1)
+    }
+    
+    func testJiraIssueKeysFromString() {
         let issueKey = "DAN-1234".jiraIssueKeys?.first
         XCTAssertNotNil(issueKey)
         XCTAssertEqual(issueKey?.id, "DAN-1234")

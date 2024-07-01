@@ -118,6 +118,8 @@ extension JiraIssueKey {
 }
 
 // MARK: - Example
+#if DEBUG
 extension JiraIssueKey {
     public static let example: JiraIssueKey = JiraIssueKey(id: "SMART-1")!
 }
+#endif
