@@ -1,12 +1,20 @@
 # SwiftJiraIssueKeyParser
 Jira Issue Key Parser in Swift
 
-## Example
+## Examples
 ```swift
 import SwiftJiraIssueKeyParser
 
 let issue = JiraIssueKey(string: "The issue is SMART-1")
-print(issue.id) // "SMART-1"
+print(issue?.id) // "SMART-1"
+```
+
+### String Extension
+```swift
+import SwiftJiraIssueKeyParser
+
+let issue = "The issue is SMART-1, not SMART-2".firstJiraIssueKey
+print(issue?.id) // "SMART-1"
 ```
 
 ## Installation
