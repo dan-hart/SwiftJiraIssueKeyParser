@@ -15,6 +15,9 @@ public class SwiftJiraIssueKeyParser {
     
     // MARK: - Properties
     
-    /// Set this value to the desired base URL of jira, such as: "https://instance.jira.com/"
+    /// Set this value to the desired base URL of jira
+    /// **Examples**
+    /// - https://instance.jira.com/
+    /// - https://instance.atlassian.net/
     public var instanceBaseURL: String?
 }

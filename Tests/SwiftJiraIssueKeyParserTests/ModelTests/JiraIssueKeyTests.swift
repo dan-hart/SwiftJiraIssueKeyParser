@@ -102,6 +102,13 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertEqual(JiraIssueKey(id: "           A1")?.id, nil)
     }
     
+    // MARK: - Project Key
+    func testProjectKey() {
+        XCTAssertEqual(JiraIssueKey(id: "SMART-1")?.projectKey, "SMART")
+        XCTAssertEqual(JiraIssueKey(id: "SMART-1")?.sequentialNumber, 1)
+        XCTAssertEqual(JiraIssueKey(id: "SMART-1")?.id, "SMART-1")
+    }
+    
     // MARK: - Test URL
     func testURLFailure() {
         XCTAssertThrowsError(try JiraIssueKey.example.url())
@@ -168,5 +175,33 @@ class JiraIssueKeyTests: XCTestCase {
         XCTAssertEqual(JiraIssueKey(id: "SMART-2"), JiraIssueKey(id: "SMART-2"))
         XCTAssertNotEqual(JiraIssueKey(id: "SMART-1"), JiraIssueKey(id: "SMART-2"))
         XCTAssertNotEqual(JiraIssueKey(id: ""), JiraIssueKey(id: "SMART-2"))
+    }
+    
+    // MARK: - Hashable
+    func testHashable() {
+        let key = JiraIssueKey(id: "SMART-2")!
+        let key2 = JiraIssueKey(id: "SMART-2")!
+        let key3 = JiraIssueKey(id: "SMART-1")!
+        
+        var set = Set<JiraIssueKey>()
+        set.insert(key)
+        set.insert(key2)
+        set.insert(key3)
+        
+        XCTAssertEqual(set.count, 2)
+    }
+    
+    // MARK: - Codable
+    func testCodable() {
+        let key = JiraIssueKey(id: "SMART-2")!
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        
+        let data = try? encoder.encode(key)
+        XCTAssertNotNil(data)
+        
+        let decodedKey = try? decoder.decode(JiraIssueKey.self, from: data!)
+        XCTAssertNotNil(decodedKey)
+        XCTAssertEqual(decodedKey, key)
     }
 }

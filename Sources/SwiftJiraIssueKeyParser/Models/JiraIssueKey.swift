@@ -8,7 +8,7 @@
 import Foundation
 
 /// https://support.atlassian.com/jira-software-cloud/docs/what-is-an-issue/
-public struct JiraIssueKey: Equatable, Hashable {
+public struct JiraIssueKey: Codable, Equatable, Hashable {
     /// Combine the project key, delimiter, and sequential number to create the issue key's identifier
     public var id: String {
         projectKey + JiraIssueKey.delimiter + "\(sequentialNumber)"
@@ -61,7 +61,9 @@ public struct JiraIssueKey: Equatable, Hashable {
 extension JiraIssueKey {
     /// Using the `SwiftJiraIssueKeyParser` base url, return this issue's url
     public func url() throws -> URL? {
-        if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL {
+        if let baseURL = SwiftJiraIssueKeyParser.shared.instanceBaseURL,
+           !baseURL.isEmpty,
+           !baseURL.trimmingCharacters(in: .whitespaces).isEmpty {
             return url(using: baseURL)
         } else {
             throw JiraIssueKeyError.missingBaseURL

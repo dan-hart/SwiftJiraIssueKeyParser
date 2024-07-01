@@ -27,4 +27,9 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and TEST-3")?.projects, ["TEST"])
         XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and SMART-3")?.projects, ["TEST", "SMART"])
     }
+    
+    func testSequentialNumbers() {
+        XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and TEST-3")?.sequentialNumbers, [1, 2, 3])
+        XCTAssertEqual(Array<JiraIssueKey>(string: "TEST-1, TEST-2, and SMART-3")?.sequentialNumbers, [1, 2, 3])
+    }
 }

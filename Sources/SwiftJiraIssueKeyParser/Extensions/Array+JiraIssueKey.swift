@@ -26,4 +26,11 @@ public extension Array where Element == JiraIssueKey {
             issueKey.projectKey
         }.unique()
     }
+    
+    /// List of sequential numbers as an integer array
+    var sequentialNumbers: [Int] {
+        return self.map { issueKey in
+            issueKey.sequentialNumber
+        }
+    }
 }
